@@ -1,9 +1,9 @@
-﻿using System.Data.Common;
+﻿using NUnit.Framework.Legacy;
 
-namespace Pandape.Application.Tests;
+namespace Pandape.Application.CreateCandidate;
 
 [TestFixture]
-public class CreateCandidateHandler: BaseCreate
+public class CreateCandidateHandlerTests: BaseCreate
 {
     public DateTime dt;
     [SetUp]
@@ -26,11 +26,10 @@ public class CreateCandidateHandler: BaseCreate
         if(_createCommand == null)
             throw new ArgumentNullException(nameof(_createCommand));
         var candidteInt = _createCommand.Handle(candidateNew, CancellationToken.None);
-        Assert.IsNotNull(candidteInt);
+        ClassicAssert.IsNotNull(candidteInt);
         using(var toCheck = OurServiceLocator.GetUnitOfWork()){
             var candidate = toCheck.Cadidates.GetAll().Where(x => x.Email == "rlp@gmail.com");
-            Assert.IsNotNull(candidate);
-            Console.WriteLine(candidate);
+            ClassicAssert.IsNotNull(candidate);
         }
     }
 

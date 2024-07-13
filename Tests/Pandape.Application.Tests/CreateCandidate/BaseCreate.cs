@@ -1,4 +1,4 @@
-﻿namespace Pandape.Application.Tests;
+﻿namespace Pandape.Application;
 
 public class BaseCreate
 {

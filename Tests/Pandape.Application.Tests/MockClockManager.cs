@@ -1,5 +1,5 @@
 ﻿
-namespace Pandape.Application.Tests;
+namespace Pandape.Application;
 
 public class MockClockManager : IClockManager
 {
