@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Pandape.Infrastructure.DataBase\Pandape.Infrastructure.DataBase.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Pandape.Infrastructure.Domain.Dto\Pandape.Infrastructure.Domain.Dto.csproj" />
+    <ProjectReference Include="..\..\Domain\Pandape.Domain\Pandape.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
