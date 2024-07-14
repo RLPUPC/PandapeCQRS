@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CandidateViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Candidatos";
+}
+
+<h1>Lista de Candidatos</h1>
+
+<p>
+    <a href="/Candidates/Create">Inscribir Nuevo Candidato</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Fecha Nacimiento
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-controller="Candidates" asp-action="Update" asp-route-idCandidate="@item.IdCandidate">Editar</a> |
+                    <a href="#" onclick="deleteCandidate(@item.IdCandidate)">Eliminar</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

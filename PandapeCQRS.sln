@@ -3,33 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandape.Web", "Pandape.Web\Pandape.Web.csproj", "{3173E35A-E810-4EAA-9265-19681EB7D223}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandape.Web", "Pandape.Web\Pandape.Web.csproj", "{3173E35A-E810-4EAA-9265-19681EB7D223}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{2D85A5D4-8D9D-4DE9-9B50-C254B44D2238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandape.Application", "Application\Pandape.Application\Pandape.Application.csproj", "{CA854AE6-E180-4767-A7B0-BF2A881DB649}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandape.Application", "Application\Pandape.Application\Pandape.Application.csproj", "{CA854AE6-E180-4767-A7B0-BF2A881DB649}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{3EC26C14-054E-4C3D-833E-36FCA50FDEFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandape.Domain", "Domain\Pandape.Domain\Pandape.Domain.csproj", "{A4666370-41FF-45C0-ADF8-BD0E7B8DD024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandape.Domain", "Domain\Pandape.Domain\Pandape.Domain.csproj", "{A4666370-41FF-45C0-ADF8-BD0E7B8DD024}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{38E78584-AD14-4126-88F4-CF2344F5E391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandape.Infrastructure.DataBase", "Infrastructure\Pandape.Infrastructure.DataBase\Pandape.Infrastructure.DataBase.csproj", "{B87D410C-E553-4253-8873-F12150FD90D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandape.Infrastructure.DataBase", "Infrastructure\Pandape.Infrastructure.DataBase\Pandape.Infrastructure.DataBase.csproj", "{B87D410C-E553-4253-8873-F12150FD90D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandape.Infrastructure.Domain.Dto", "Infrastructure\Pandape.Infrastructure.Domain.Dto\Pandape.Infrastructure.Domain.Dto.csproj", "{CD44AB67-16FF-4FE8-8CD4-D1E7078C0693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandape.Infrastructure.Domain.Dto", "Infrastructure\Pandape.Infrastructure.Domain.Dto\Pandape.Infrastructure.Domain.Dto.csproj", "{CD44AB67-16FF-4FE8-8CD4-D1E7078C0693}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F0FEC500-B6C0-4F76-9BD6-6F712EF66DAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandape.Application.Tests", "Tests\Pandape.Application.Tests\Pandape.Application.Tests.csproj", "{D3DECE6F-B230-4EA3-AD64-83018A0B4F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandape.Application.Tests", "Tests\Pandape.Application.Tests\Pandape.Application.Tests.csproj", "{D3DECE6F-B230-4EA3-AD64-83018A0B4F60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3173E35A-E810-4EAA-9265-19681EB7D223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -56,6 +53,9 @@ Global
 		{D3DECE6F-B230-4EA3-AD64-83018A0B4F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3DECE6F-B230-4EA3-AD64-83018A0B4F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3DECE6F-B230-4EA3-AD64-83018A0B4F60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CA854AE6-E180-4767-A7B0-BF2A881DB649} = {2D85A5D4-8D9D-4DE9-9B50-C254B44D2238}

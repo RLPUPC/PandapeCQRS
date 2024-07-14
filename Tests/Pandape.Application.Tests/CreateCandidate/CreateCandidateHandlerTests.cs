@@ -15,6 +15,12 @@ public class CreateCandidateHandlerTests: BaseCreate
         _clockManager.SetCurrentUtc(dt);
     }
 
+    [TearDown]
+    public void TearDown() 
+    {
+        ClearCandidateDDBB(); 
+    }
+
     [Test]
     public void CreateCandidateDDBB(){
         var candidateNew = new CreateCandidateCommand {

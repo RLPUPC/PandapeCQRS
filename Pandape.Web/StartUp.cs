@@ -1,5 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Pandape.Application;
 using Pandape.Infrastructure.DataBase;
+using System.Reflection;
 
 namespace Pandape.Web;
 
@@ -24,7 +30,23 @@ public class StartUp
             options.UseSqlServer(connectionString);
         });
 
+        services.Configure<ApiBehaviorOptions>(options => 
+        {
+            options.SuppressModelStateInvalidFilter = true;
+        });
+
+        foreach(var assembly in AppDomain.CurrentDomain.GetAssemblies()) 
+        {
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
+        }
+
+
+
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IClockManager, ClockManager>();
 
         services.AddControllersWithViews();
     }
@@ -35,7 +57,6 @@ public class StartUp
         using(var scope = app.Services.CreateAsyncScope()){
             PandaContext context = scope.ServiceProvider.GetRequiredService<PandaContext>();
             context.Database.EnsureCreated();
-            context.Database.Migrate();
         }
 
         // Configure the HTTP request pipeline.
@@ -55,7 +76,7 @@ public class StartUp
 
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
+            pattern: "{controller=Candidates}/{action=Index}/{id?}");
     }
 
 }

@@ -1,9 +1,8 @@
 ﻿namespace Pandape.Application;
 
-public class BaseCreate
+public class BaseCreate: BaseUowTests
 {
     protected CreateCandidateCommandHandle? _createCommand;
-    protected MockClockManager? _clockManager;
     public void BaseSetUp() {
 
         _clockManager = new MockClockManager();

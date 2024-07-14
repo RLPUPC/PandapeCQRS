@@ -41,7 +41,7 @@ public class CreateCandidateValidate : AbstractValidator<CreateCandidateCommand>
     public CreateCandidateValidate() 
     {
         RuleFor(x => x.Name).NotEmpty().WithMessage("Name is requiered.");
-        RuleFor(x => x.Surname).NotEmpty().WithMessage("Name is requiered.");
+        RuleFor(x => x.Surname).NotEmpty().WithMessage("Surname is requiered.");
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("A valid email is required.")
             .EmailAddress().WithMessage("Name is requiered.");

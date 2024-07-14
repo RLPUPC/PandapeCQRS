@@ -1,10 +1,4 @@
 ﻿using FluentValidation.TestHelper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Pandape.Application.CreateCandidate
 {
@@ -30,6 +24,21 @@ namespace Pandape.Application.CreateCandidate
             var result = _validator.TestValidate(candidate);
             var err = result.ShouldHaveValidationErrorFor(x => x.Name).FirstOrDefault();
             Assert.That(err.ErrorMessage, Is.EqualTo("Name is requiered."));
+        }
+
+        [Test]
+        public void ErrorWhenSurenameIsEmpty()
+        {
+            var candidate = new CreateCandidateCommand
+            {
+                Name = "John",
+                Surname = string.Empty,
+                Email = "john.doe@example.com",
+                Birthdate = new DateTime(2000, 1, 1)
+            };
+            var result = _validator.TestValidate(candidate);
+            var err = result.ShouldHaveValidationErrorFor(x => x.Surname).FirstOrDefault();
+            Assert.That(err.ErrorMessage, Is.EqualTo("Surname is requiered."));
         }
     }
 }
